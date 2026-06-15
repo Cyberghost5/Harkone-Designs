@@ -35,11 +35,31 @@ $moreProjects = $moreProjectsStmt->fetchAll();
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description"
-    content="<?php echo htmlspecialchars(substr($project['description'], 0, 150)); ?>..." />
+  <meta name="description" content="<?php echo htmlspecialchars(substr($project['description'], 0, 150)); ?>..." />
   <meta name="author" content="Adebisi Covenant" />
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 days">
+  <meta name="author" content="Adebisi Covenant">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="NG" />
+  <meta name="geo.placename" content="Lagos" />
+  <meta name="geo.position" content="6.5244;3.3792" />
+  <meta name="ICBM" content="6.5244, 3.3792" />
+
   <meta property="og:title" content="<?php echo htmlspecialchars($project['title']); ?> · Case Study by Adebisi Covenant" />
   <meta property="og:type" content="article" />
+  <meta property="og:locale" content="en_US"/>
+  <meta property="og:url" content="https://harkone.com.ng"/>
+  <meta property="og:description" content="<?php echo htmlspecialchars(substr($project['description'], 0, 150)); ?>..."/>
+  <meta property="og:image" content="https://harkone.com.ng/images/sm.png"/>
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="<?php echo htmlspecialchars($project['title']); ?> · Case Study by Adebisi Covenant"/>
+  <meta property="twitter:description" content="<?php echo htmlspecialchars(substr($project['description'], 0, 150)); ?>..."/>
+  <meta property="twitter:url" content="https://harkone.com.ng"/>
+  <meta property="twitter:image" content="https://harkone.com.ng/images/sm.png"/>
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://harkone.com.ng/images/favicon.png">
   <title><?php echo htmlspecialchars($project['title']); ?> · Case Study - Adebisi Covenant</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>

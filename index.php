@@ -19,13 +19,32 @@ $latestBlogs = $blogsStmt->fetchAll();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Adebisi Covenant - Freelance UI/UX Designer &amp; Full Stack Developer. CEO Harkone Designs.">
-  <meta name="keywords" content="freelance developer, UI designer, portfolio, Tailwind CSS, Alpine.js, Harkone, Adebisi Covenant">
+  <meta name="keywords" content="freelance developer, UI designer, portfolio, Tailwind CSS, Alpine.js, Harkone, Harkone Designs, Adebisi Covenant">
   <meta name="author" content="Adebisi Covenant">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 days">
+  <meta name="author" content="Adebisi Covenant">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="NG" />
+  <meta name="geo.placename" content="Lagos" />
+  <meta name="geo.position" content="6.5244;3.3792" />
+  <meta name="ICBM" content="6.5244, 3.3792" />
+  
+
   <meta property="og:title" content="Adebisi Covenant - Freelance UI/UX Designer">
-  <meta property="og:description" content="I design and build digital products that people love to use - fast, clean, and accessible.">
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="https://harkone.com.ng">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+  <meta property="og:description" content="I design and build digital products that people love to use - fast, clean, and accessible.">
+  <meta property="og:image" content="https://harkone.com.ng/images/sm.png">
+
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Adebisi Covenant - Freelance UI/UX Designer"/>
+  <meta property="twitter:description" content="I design and build digital products that people love to use - fast, clean, and accessible.">
+  <meta property="twitter:url" content="https://harkone.com.ng"/>
+  <meta property="twitter:image" content="https://harkone.com.ng/images/sm.png">
+
+  <link rel="shortcut icon" type="image/x-icon" href="https://harkone.com.ng/images/favicon.png">
   <title>Adebisi Covenant - Freelance UI/UX Designer &amp; Full Stack Dev</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -47,6 +66,22 @@ $latestBlogs = $blogsStmt->fetchAll();
       }
     }
   </script>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-234405192-1">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-234405192-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1889394779762877"
+     crossorigin="anonymous"></script>
+    
+    <!-- Amplitude JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/amplitudejs@5.3.2/dist/amplitude.js"></script>
+<!-- Meta Pixel Code --><script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1183796817228500'); fbq('track', 'PageView');</script><noscript> <img height="1" width="1" src="https://www.facebook.com/tr?id=1183796817228500&ev=PageView&noscript=1"/></noscript><!-- End Meta Pixel Code -->
 
   <style>
     *,

@@ -153,13 +153,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <!-- HEADER -->
   <header class="border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.php" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2">
+      <a href="./" class="font-display font-bold text-xl tracking-tight text-white flex items-center">
         ade<span class="text-accent">bisi</span>
         <span class="bg-zinc-900 text-zinc-500 border border-zinc-800 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full">admin</span>
       </a>
       
       <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="index.php" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
+        <a href="./" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
         <a href="blogs.php" class="text-accent">Blogs</a>
         <a href="projects.php" class="text-zinc-400 hover:text-white transition-colors">Works</a>
         <a href="messages.php" class="text-zinc-400 hover:text-white transition-colors">Messages</a>
@@ -194,11 +194,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <!-- Alert notes -->
     <?php if (!empty($error)): ?>
-      <div class="mb-6 bg-red-950/40 border border-red-800 text-red-300 text-sm px-4 py-3 rounded-2xl flex items-center gap-2">
+      <div class="mb-6 bg-red-950/40 border border-red-800 text-red-300 text-sm px-4 py-3 rounded-2xl flex items-center">
         <span><?php echo htmlspecialchars($error); ?></span>
       </div>
     <?php elseif (!empty($success)): ?>
-      <div class="mb-6 bg-green-950/20 border border-green-800 text-green-300 text-sm px-4 py-3 rounded-2xl flex items-center gap-2">
+      <div class="mb-6 bg-green-950/20 border border-green-800 text-green-300 text-sm px-4 py-3 rounded-2xl flex items-center">
         <span><?php echo htmlspecialchars($success); ?></span>
       </div>
     <?php endif; ?>

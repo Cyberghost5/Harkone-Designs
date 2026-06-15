@@ -93,13 +93,13 @@ $projects = $stmt->fetchAll();
   <!-- HEADER -->
   <header class="border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.php" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2">
+      <a href="./" class="font-display font-bold text-xl tracking-tight text-white flex items-center">
         ade<span class="text-accent">bisi</span>
         <span class="bg-zinc-900 text-zinc-500 border border-zinc-800 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full">admin</span>
       </a>
       
       <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="index.php" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
+        <a href="./" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
         <a href="blogs.php" class="text-zinc-400 hover:text-white transition-colors">Blogs</a>
         <a href="projects.php" class="text-accent">Works</a>
         <a href="messages.php" class="text-zinc-400 hover:text-white transition-colors">Messages</a>
@@ -120,7 +120,7 @@ $projects = $stmt->fetchAll();
         <h1 class="text-3xl font-bold text-white tracking-tight">Manage Works & Projects</h1>
         <p class="text-zinc-400 text-sm mt-1">Add, edit, or remove works from your portfolio.</p>
       </div>
-      <a href="edit-project.php" class="bg-accent text-white hover:bg-accent-light text-sm font-medium px-5 py-2.5 rounded-2xl flex items-center gap-2 hover:shadow-lg hover:shadow-accent/10 transition-all">
+      <a href="edit-project.php" class="bg-accent text-white hover:bg-accent-light text-sm font-medium px-5 py-2.5 rounded-2xl flex items-center hover:shadow-lg hover:shadow-accent/10 transition-all">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>

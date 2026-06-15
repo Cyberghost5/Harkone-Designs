@@ -87,13 +87,13 @@ $blogs = $stmt->fetchAll();
   <!-- HEADER -->
   <header class="border-b border-zinc-900 bg-zinc-950/80 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="index.php" class="font-display font-bold text-xl tracking-tight text-white flex items-center gap-2">
+      <a href="./" class="font-display font-bold text-xl tracking-tight text-white flex items-center">
         ade<span class="text-accent">bisi</span>
         <span class="bg-zinc-900 text-zinc-500 border border-zinc-800 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded-full">admin</span>
       </a>
       
       <nav class="flex items-center gap-6 text-sm font-medium">
-        <a href="index.php" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
+        <a href="./" class="text-zinc-400 hover:text-white transition-colors">Dashboard</a>
         <a href="blogs.php" class="text-accent">Blogs</a>
         <a href="projects.php" class="text-zinc-400 hover:text-white transition-colors">Works</a>
         <a href="messages.php" class="text-zinc-400 hover:text-white transition-colors">Messages</a>
