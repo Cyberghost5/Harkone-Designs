@@ -118,6 +118,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- CKEditor 5 Classic CDN -->
+  <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
   
   <script>
     tailwind.config = {
@@ -142,6 +144,107 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       z-index: 0;
       opacity: .04;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")
+    }
+    
+    /* CKEditor 5 Custom Dark Theme overrides */
+    :root {
+      --ck-border-radius: 16px;
+      --ck-color-base-border: #27272a;
+      --ck-color-base-background: #09090b;
+      --ck-color-base-foreground: #09090b;
+      --ck-color-focus-border: #0b94ba;
+      --ck-color-text: #f4f4f5;
+      --ck-color-toolbar-background: #18181b;
+      --ck-color-toolbar-border: #27272a;
+    }
+    .ck-editor__editable_inline {
+      min-height: 350px;
+    }
+    .ck.ck-editor__main>.ck-editor__editable {
+      background: #09090b !important;
+      color: #f4f4f5 !important;
+      border-color: #27272a !important;
+    }
+    .ck.ck-editor__main>.ck-editor__editable.ck-focused {
+      border-color: #0b94ba !important;
+      box-shadow: 0 0 0 1px #0b94ba !important;
+    }
+    .ck.ck-editor__top .ck-toolbar {
+      background: #18181b !important;
+      border-color: #27272a !important;
+    }
+    .ck.ck-toolbar .ck-button {
+      color: #a1a1aa !important;
+    }
+    .ck.ck-toolbar .ck-button:hover {
+      background: #27272a !important;
+      color: #f4f4f5 !important;
+    }
+    .ck.ck-toolbar .ck-button.ck-on {
+      background: #27272a !important;
+      color: #0b94ba !important;
+    }
+    .ck.ck-dropdown__panel {
+      background: #18181b !important;
+      border-color: #27272a !important;
+      color: #f4f4f5 !important;
+    }
+    .ck.ck-list {
+      background: #18181b !important;
+    }
+    .ck.ck-list__item .ck-button:hover {
+      background: #27272a !important;
+      color: #f4f4f5 !important;
+    }
+    .ck.ck-button.ck-disabled {
+      color: #52525b !important;
+    }
+    .ck.ck-editor__main>.ck-editor__editable.ck-placeholder::before {
+      color: #71717a !important;
+    }
+    
+    /* Format headings & lists within CKEditor editable preview */
+    .ck-content h2 {
+      font-size: 1.5em !important;
+      font-weight: bold !important;
+      margin-top: 1em !important;
+      margin-bottom: 0.5em !important;
+    }
+    .ck-content h3 {
+      font-size: 1.25em !important;
+      font-weight: bold !important;
+      margin-top: 1em !important;
+      margin-bottom: 0.5em !important;
+    }
+    .ck-content h4 {
+      font-size: 1.1em !important;
+      font-weight: bold !important;
+      margin-top: 1em !important;
+      margin-bottom: 0.5em !important;
+    }
+    .ck-content p {
+      margin-bottom: 1em !important;
+    }
+    .ck-content ul {
+      list-style-type: disc !important;
+      padding-left: 2em !important;
+      margin-bottom: 1em !important;
+    }
+    .ck-content ol {
+      list-style-type: decimal !important;
+      padding-left: 2em !important;
+      margin-bottom: 1em !important;
+    }
+    .ck-content a {
+      color: #0b94ba !important;
+      text-decoration: underline !important;
+    }
+    .ck-content blockquote {
+      border-left: 4px solid #27272a !important;
+      padding-left: 1em !important;
+      color: #a1a1aa !important;
+      font-style: italic !important;
+      margin-bottom: 1em !important;
     }
   </style>
 </head>
@@ -245,9 +348,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <label for="content" class="block text-xs font-semibold uppercase tracking-wider text-zinc-400">Content (HTML / Markdown)</label>
               <span class="text-[10px] text-zinc-500 bg-zinc-950 px-2 py-0.5 border border-zinc-800 rounded-md">Raw HTML supported</span>
             </div>
-            <textarea id="content" name="content" required rows="15"
+            <textarea id="content" name="content" rows="15"
               class="w-full bg-zinc-950 border border-zinc-800 text-zinc-100 font-mono rounded-2xl px-4 py-4 text-xs focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-y"
-              placeholder="<h2>Subheading</h2><p>Article body content here...</p>"><?php echo $blog ? htmlspecialchars($blog['content']) : ''; ?></textarea>
+              placeholder="Start writing..."><?php echo $blog ? htmlspecialchars($blog['content']) : ''; ?></textarea>
           </div>
 
         </div>
@@ -335,5 +438,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
   </main>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      ClassicEditor
+        .create(document.querySelector('#content'), {
+          toolbar: [
+            'heading', '|',
+            'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+            'insertTable', 'undo', 'redo'
+          ]
+        })
+        .then(editor => {
+          // Sync changes back to textarea for form submission
+          editor.model.document.on('change:data', () => {
+            document.querySelector('#content').value = editor.getData();
+          });
+        })
+        .catch(error => {
+          console.error('CKEditor Initialization Error:', error);
+        });
+    });
+  </script>
 </body>
 </html>
