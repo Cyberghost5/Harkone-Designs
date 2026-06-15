@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Redirect external requests from /filename.php to /filename (GET only to preserve POST)
+RewriteCond %{THE_REQUEST} \s/+(.+)\.php[\s?] [NC]
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteRule ^ /%1 [R=301,L]
+
+# Internal rewrite from /filename to /filename.php if the file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [L]
